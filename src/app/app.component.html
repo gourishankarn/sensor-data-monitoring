@@ -1,0 +1,12 @@
+<div class="ui visible thin sidebar inverted blue labeled icon vertical menu">
+  <a routerLink="{{nav.link}}" class="item" *ngFor="let nav of sidenav">
+    <i class="{{nav.icon}} icon"></i>
+    {{nav.name}}
+  </a>
+</div>
+<div class="ui basic segment" style="margin-right: 11%;">
+  <h2 class="ui dividing header">
+    Smart Street Monitoring System
+  </h2>
+  <router-outlet></router-outlet>
+</div>

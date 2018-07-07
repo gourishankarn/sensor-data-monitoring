@@ -1,0 +1,36 @@
+<div class="ui stackable grid">
+  <div class="two column row">
+    <div class="middle aligned center aligned column">
+      <h1>
+        Intelligent Street Light Controller
+      </h1>
+    </div>
+
+    <div class="center aligned column">
+      <div class="ui segment">
+        <i class="huge {{channelFeed.feeds[0].field4 > 50? 'red bus icon': 'green bus icon'}} icon"></i>
+        <h2>{{channelFeed.feeds[0].field1-channelFeed.feeds[0].field2 > 3? 'Street is full': 'Street is empty'}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="two column row">
+    <div class="column">
+      <div class="ui center aligned sub header">Analysis</div>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/482383/charts/1?average=10&bgcolor=%23e0ffff&color=%23d62020&dynamic=true&results=60&title=Incoming+Vehicles&type=spline"></iframe></div>
+      <div class="middle aligned center aligned column">
+      <div class="ui statistic">
+        <div class="label">
+          Latest sensor value
+        </div>
+        <div class="value">
+          {{channelFeed.feeds[0].field1-channelFeed.feeds[0].field2}}
+        </div>
+      </div>
+      <!-- <div class="ui segment">
+        <div class="ui dividing sub header">Previous values</div>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+

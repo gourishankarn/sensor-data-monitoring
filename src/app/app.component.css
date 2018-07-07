@@ -1,0 +1,7 @@
+.vertical.menu>a.item {
+  color: rgba(255, 255, 255, 0.774) !important;
+}
+
+.vertical.menu>a.item :hover {
+  color: rgba(255, 255, 255, 0.945) !important;
+}

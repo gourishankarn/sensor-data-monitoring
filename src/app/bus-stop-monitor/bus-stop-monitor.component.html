@@ -1,0 +1,40 @@
+<div class="ui stackable grid">
+  <div class="two column row">
+    <div class="middle aligned center aligned column">
+      <h1>
+        Smart Bus Stand
+      </h1>
+      <p>Automatically switches the lights in the bus stand if any object detected</p>
+    </div>
+    <div class="center aligned column">
+      <div class="ui segment">
+        <i class="massive icons">
+          <i class="male icon"></i>
+          <i class="inverted corner {{channelFeed.feeds[0].field2 > 50? 'red dont icon': 'green exclamation icon'}}"></i>
+        </i>
+        <h2>{{channelFeed.feeds[0].field5 > 50? 'Bus stand is full': 'Bus stand is empty'}}</h2>
+        <p>{{channelFeed.feeds[0].field5 > 50? ' So lights are ON!': ' So lights are OFF!'}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="two column row">
+    <div class="column">
+      <div class="ui center aligned sub header">Analysis</div>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/482383/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Bustop_peoples&type=line"></iframe>
+    </div>
+    <div class="middle aligned center aligned column">
+      <div class="ui statistic">
+        <div class="label">
+          Latest sensor value
+        </div>
+        <div class="value">
+          {{channelFeed.feeds[0].field5}}
+        </div>
+      </div>
+      <!-- <div class="ui segment">
+        <div class="ui dividing sub header">Previous values</div>
+      </div> -->
+    </div>
+
+  </div>
+</div>

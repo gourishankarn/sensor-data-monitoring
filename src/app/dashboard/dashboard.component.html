@@ -1,0 +1,135 @@
+<div class="ui center aligned stackable grid">
+  <div class="two column row">
+    <div class="column">
+      <div class="ui segment">
+        <div class="ui yellow dividing header">
+          Bus Stop Monitor
+        </div>
+        <div class="ui stackable divided grid">
+          <div class="two column row">
+            <div class="middle aligned center aligned column">
+              <div class="ui statistic">
+                <div class="label">
+                  Latest sensor value
+                </div>
+                <div class="value">
+                  {{channelFeed.feeds[0].field5}}
+                </div>
+              </div>
+            </div>
+            <div class="center aligned column">
+              <i class="massive icons">
+                <i class="male icon"></i>
+                <i class="inverted corner {{channelFeed.feeds[0].field2 > 50? 'red dont icon': 'green exclamation icon'}}"></i>
+              </i>
+              <h2>{{channelFeed.feeds[0].field5 > 200? 'Bus stand is empty': 'Bus stand is full'}}</h2>
+              <p>{{channelFeed.feeds[0].field5 > 200? ' So lights are off!': ' So lights are on!'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui segment">
+        <div class="ui orange dividing header">
+          Day light Monitor
+        </div>
+        <div class="ui stackable divided grid">
+          <div class="two column row">
+            <div class="middle aligned center aligned column">
+              <div class="ui statistic">
+                <div class="label">
+                  Latest sensor value
+                </div>
+                <div class="value">
+                  {{channelFeed.feeds[0].field4}}
+                </div>
+              </div>
+            </div>
+            <div class="middle aligned center aligned column">
+              <i class="massive {{channelFeed.feeds[0].field3 > 50? 'loading yellow sun': 'moon'}} icon"></i>
+              <h2>{{channelFeed.feeds[0].field4 > 300? 'It\'s day time': 'It\'s Night time'}}</h2>
+              <p> {{channelFeed.feeds[0].field4 > 300? 'So street lights are OFF!': 'So the Street lights are ON!'}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="two column row">
+    <div class="middle aligned column" style="height:100%;">
+      <div class="ui segment">
+        <div class="ui red dividing header">
+          Raining Monitor
+        </div>
+        <div class="ui stackable divided grid">
+          <div class="two column row">
+            <div class="middle aligned center aligned column">
+              <div class="ui statistic">
+                <div class="label">
+                  Sensor value
+                </div>
+                <div class="value">
+                  {{channelFeed.feeds[0].field3}}
+                </div>
+              </div>
+            </div>
+            <div class="center aligned column">
+              <i class="massive {{channelFeed.feeds[0].field1 > 50? 'blue cloud icon': 'grey cloud icon'}} icon"></i>
+              <h2>{{channelFeed.feeds[0].field3 >100? 'It\'s not Raining': 'It\'s  raining'}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui segment">
+        <div class="ui pink dividing header">
+          Street Monitor
+        </div>
+        <div class="ui stackable divided grid">
+          <div class="two column row">
+            <div class="middle aligned center aligned column">
+              <div class="ui statistic">
+                <div class="label">
+                  Latest sensor value
+                </div>
+                <div class="value">
+                  {{channelFeed.feeds[0].field1}}
+                </div>
+              </div>
+            </div>
+            <div class="middle aligned center aligned column">
+              <i class="massive {{channelFeed.feeds[0].field4 > 50? 'red car icon': 'green car icon'}}"></i>
+              <h2>{{channelFeed.feeds[0].field1 >2? 'Street is full': 'Street is free'}}</h2>
+              <p>{{channelFeed.feeds[0].field1 > 2? ' So lights are ON!': ' So lights are OFF!'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui center aligned divided stackable grid">
+  <div class="two column row">
+    <div class="column">
+      <div class="ui dividing sub header">Rain Sensor Analysis</div>
+      <iframe width="450px" height="260px" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/482383/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    </div>
+    <div class="column">
+      <div class="ui dividing sub header">IVR sensor analysis</div>
+      <iframe width="450px" height="260px" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/482383/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=bar&update=15"></iframe>
+    </div>
+  </div>
+  <div class="two column row">
+    <div class="column">
+      <div class="ui dividing sub header">LDR Analysis</div>
+      <iframe width="450px" height="260px" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/482383/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=column&update=15"></iframe>
+    </div>
+    <div class="column">
+      <div class="ui dividing sub header">Proximity sensor analysis</div>
+      <iframe width="450px" height="260px" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/482383/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=spline&update=15"></iframe>
+    </div>
+  </div>
+</div>
